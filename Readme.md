@@ -2,6 +2,7 @@
 
 * Студент: [Ildar Gnn](https://htmlacademy.ru/profile/ildar-gn).
 * Наставник: `Кекс`.
+* Сайт: [Седона](https://ildar-gn.github.io/228365-sedona-39)
 
 ---
 
@@ -12,7 +13,7 @@ _`.editorconfig`, `.gitattributes`, `.gitignore`, `Contributing.md`, `Readme.md`
 
 ### Памятка
 
-#### 1. Зарегистрируйтесь на Гитхабе
+#### 1. Зарегистрируйтесь на Github
 
 Если у вас ещё нет аккаунта на [github.com](https://github.com/join), скорее зарегистрируйтесь.
 
