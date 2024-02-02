@@ -1,7 +1,7 @@
 # Личный проект «Седона»
 
 * Студент: [Ildar Gnn](https://htmlacademy.ru/profile/ildar-gn).
-* Наставник: [Кекс](https://htmlacademy.ru/profile/id2497787).
+* Наставник: [Keks](https://htmlacademy.ru/profile/id2497787).
 * Сайт: [Седона](https://ildar-gn.github.io/228365-sedona-39).
 
 ---
