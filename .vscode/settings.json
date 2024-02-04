@@ -20,7 +20,9 @@
   "css.lint.zeroUnits": "error",
   "html.format.endWithNewline": true,
   "html.format.indentInnerHtml": true,
+  "cSpell.language": "en,ru",
   "cSpell.words": [
-    "Седона"
+    "Седона",
+    "Седоне"
   ]
 }
