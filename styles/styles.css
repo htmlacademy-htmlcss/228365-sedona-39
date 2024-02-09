@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'ptsans';
+  src: url('../fonts/ptsans-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ptsans';
+  src: url('../fonts/ptsans-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --color-dark-primary: #000000;
+  --color-dark-secondary: #333333;
+
+  --font-family: 'ptsans', sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.2;
+  color: var(--color-dark-secondary);
+}
