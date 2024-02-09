@@ -27,6 +27,9 @@
   --color-gray-light: #F2F2F2;
   --color-error: #FF5757;
 
+  --border: 1px solid var(--color-gray);
+  --border-radius: 4px;
+
   --font-family: 'ptsans', sans-serif;
 }
 
