@@ -17,6 +17,7 @@
 :root {
   --color-dark-primary: #000000;
   --color-dark-secondary: #333333;
+  --color-light: #FFFFFF;
 
   --font-family: 'ptsans', sans-serif;
 }
@@ -27,4 +28,5 @@ body {
   font-size: 18px;
   line-height: 1.2;
   color: var(--color-dark-secondary);
+  background-color: var(--color-light);
 }
