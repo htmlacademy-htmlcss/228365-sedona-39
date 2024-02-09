@@ -15,9 +15,17 @@
 }
 
 :root {
+  --color-primary: #756157;
+  --color-secondary: #82B3D3;
+  --color-secondary-middle: #E6F0F6;
+  --color-secondary-light: #F0F6FA;
+  --color-accent: #7DB54F;
   --color-dark-primary: #000000;
   --color-dark-secondary: #333333;
   --color-light: #FFFFFF;
+  --color-gray: #E5E5E5;
+  --color-gray-light: #F2F2F2;
+  --color-error: #FF5757;
 
   --font-family: 'ptsans', sans-serif;
 }
