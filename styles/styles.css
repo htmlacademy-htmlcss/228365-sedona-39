@@ -147,10 +147,8 @@ body {
 }
 
 .hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 51px;
+  text-align: center;
+  padding: 51px 10px;
   padding-bottom: 82px;
   background-color: var(--color-secondary-middle);
   background-image: url("../images/hero-bg-image.jpeg");
@@ -258,4 +256,64 @@ body {
 
 .advantages-subtitle {
   margin-bottom: 64px;
+}
+
+.advantages-item:nth-child(2n+1) {
+  background-color: var(--color-secondary-middle);
+}
+
+.advantages-item-title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  text-transform: uppercase;
+}
+
+.advantages-description {
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.offer {
+  padding: 96px 10px;
+  text-align: center;
+}
+
+.offer-title {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+  text-transform: uppercase;
+}
+
+.offer-subtitle {
+  margin-bottom: 54px;
+}
+
+.offer-button {
+  padding: 8px 50px;
+}
+
+.subscribe {
+  padding: 96px 10px;
+  padding-bottom: 104px;
+  text-align: center;
+  color: var(--color-light);
+  background-image: url(../images/subscribe-bg-image.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.subscribe-title {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+  text-transform: uppercase;
+}
+
+.subscribe-subtitle {
+  margin-bottom: 54px;
 }
