@@ -10,6 +10,7 @@
   <body>
 
     <div class="page-wrap">
+      <!-- Шапка -->
       <header class="page-header">
         <a class="page-header-logo-wrap" href="index.html">
           <img class="page-header-logo" src="images/logo.svg" width="140" height="70" alt="Перейти на главную страницу сайта города Седона">
@@ -44,9 +45,11 @@
       </header>
 
       <main class="main-inner">
-        <div class="filter-wrap">
+        <!-- Первый экран -->
+        <div class="inner-hero">
           <header class="inner-header">
             <h1 class="inner-header-title">Гостиницы Седоны</h1>
+            <!-- Хлебные крошки -->
             <nav class="inner-navigation" aria-label="Меню хлебные крошки">
               <ol class="breadcrumbs-list">
                 <li class="breadcrumbs-item">
@@ -60,6 +63,7 @@
               </ol>
             </nav>
           </header>
+          <!-- Фильтрация -->
           <section class="place-filter">
             <h2 class="visually-hidden">Фильтр выбора жилья</h2>
             <form class="catalog-filter" action="https://echo.htmlacademy.ru/" method="get">
@@ -121,35 +125,39 @@
                 </p>
                 <input class="price-slider" type="range" min="0" max="9000" value="0" step="100">
               </fieldset>
-              <button class="apply-button button" type="submit">Применить</button>
-              <button class="reset-button button" type="reset">Сбросить</button>
+              <button class="apply-button button button--small button--secondary" type="submit">Применить</button>
+              <button class="reset-button button button--small button--transparent" type="reset">Сбросить</button>
             </form>
           </section>
         </div>
+        <!-- Каталог -->
         <section class="catalog-products">
           <h2 class="catalog-products-title">Найдено гостиниц: <span>38</span></h2>
+          <!-- Сортировка -->
           <select class="select-control" name="sort" aria-label="Выпадающий список для сортировки">
             <option value="popular">Сначала популярные</option>
             <option value="cheap" selected>Сначала дешёвые</option>
             <option value="expensive">Сначала дорогие</option>
           </select>
+          <!-- Вид отображения -->
           <ul class="view-list">
             <li class="view-item">
-              <a class="grid-view-button view-button view-button--current" href="#">
+              <a class="grid-view-button button button--current" href="#">
                 <span class="visually-hidden">Смотреть в виде сетки.</span>
               </a>
             </li>
             <li class="view-item">
-              <a class="extended-view-button view-button" href="#">
+              <a class="extended-view-button button" href="#">
                 <span class="visually-hidden">Смотреть расширенные карточки.</span>
               </a>
             </li>
             <li class="view-item">
-              <a class="list-view-button view-button" href="#">
+              <a class="list-view-button button" href="#">
                 <span class="visually-hidden">Смотреть списком.</span>
               </a>
             </li>
           </ul>
+          <!-- Список гостиниц -->
           <ul class="product-list">
             <li class="product-card">
               <article class="product-card-article">
@@ -161,8 +169,8 @@
                 </a>
                 <p class="product-card-type">Гостиница</p>
                 <p class="product-card-price">От 4000 ₽</p>
-                <a class="product-card-more-button button button--small button--primary" href="#">Подробнее</a>
-                <a class="product-card-favorite-button button button--small button-secondary" href="#">В избранное</a>
+                <a class="product-card-button button button--small button--primary" href="#">Подробнее</a>
+                <a class="product-card-button button button--small button--secondary" href="#">В избранное</a>
                 <p class="product-card-stars product-card-stars-4"><span class="visually-hidden">4 звезды</span></p>
                 <p class="product-card-rating">Рейтинг: <span>8,5</span></p>
               </article>
@@ -177,8 +185,8 @@
                 </a>
                 <p class="product-card-type">Гостиница</p>
                 <p class="product-card-price">От 5000 ₽</p>
-                <a class="product-card-more-button button button--small button--primary" href="#">Подробнее</a>
-                <a class="product-card-favorite-button button button--small button--active" href="#">В избранном</a>
+                <a class="product-card-button button button--small button--primary" href="#">Подробнее</a>
+                <a class="product-card-button button button--small button--active" href="#">В избранном</a>
                 <p class="product-card-stars product-card-stars-4"><span class="visually-hidden">4 звезды</span></p>
                 <p class="product-card-rating">Рейтинг: <span>9,2</span></p>
               </article>
@@ -193,8 +201,8 @@
                 </a>
                 <p class="product-card-type">Гостиница</p>
                 <p class="product-card-price">От 2500 ₽</p>
-                <a class="product-card-more-button button button--small button--primary" href="#">Подробнее</a>
-                <a class="product-card-favorite-button button button--small button-secondary" href="#">В избранное</a>
+                <a class="product-card-button button button--small button--primary" href="#">Подробнее</a>
+                <a class="product-card-button button button--small button--secondary" href="#">В избранное</a>
                 <p class="product-card-stars product-card-stars-3"><span class="visually-hidden">3 звезды</span></p>
                 <p class="product-card-rating">Рейтинг: <span>6,9</span></p>
               </article>
@@ -209,34 +217,36 @@
                 </a>
                 <p class="product-card-type">Гостиница</p>
                 <p class="product-card-price">От 1500 ₽</p>
-                <a class="product-card-more-button button button--small button--primary" href="#">Подробнее</a>
-                <a class="product-card-favorite-button button button--small button-secondary" href="#">В избранное</a>
+                <a class="product-card-button button button--small button--primary" href="#">Подробнее</a>
+                <a class="product-card-button button button--small button--secondary" href="#">В избранное</a>
                 <p class="product-card-stars product-card-stars-2"><span class="visually-hidden">2 звезды</span></p>
                 <p class="product-card-rating">Рейтинг: <span>5,0</span></p>
               </article>
             </li>
           </ul>
+          <!-- Постраничная навигация -->
           <ul class="pagination-list">
             <li class="pagination-item">
-              <a class="pagination-link pagination--current" aria-current="page">1</a>
+              <a class="pagination-link button button--big button--secondary pagination--current" aria-current="page">1</a>
             </li>
             <li class="pagination-item">
-              <a class="pagination-link" href="#">2</a>
+              <a class="pagination-link button button--big button--secondary " href="#">2</a>
             </li>
             <li class="pagination-item">
-              <a class="pagination-link" href="#">3</a>
+              <a class="pagination-link button button--big button--secondary" href="#">3</a>
             </li>
             <li class="pagination-item">
-              <a class="pagination-link" href="#">4</a>
+              <a class="pagination-link button button--big button--secondary" href="#">4</a>
             </li>
             <li class="pagination-item pagination-separator">
-              <span class="pagination-link" aria-hidden="true">…</span>
+              <span class="pagination-link button button--big" aria-hidden="true">…</span>
             </li>
             <li class="pagination-item">
-              <a class="pagination-link" href="#">10</a>
+              <a class="pagination-link button button--big button--secondary" href="#">10</a>
             </li>
           </ul>
         </section>
+        <!-- Подписка -->
         <section class="subscribe">
           <h2 class="subscribe-title">Подпишитесь на рассылку</h2>
           <p class="subscribe-subtitle">Только полезная информация и никакого спама, честное бойскаутское!</p>
@@ -245,11 +255,11 @@
               <label class="visually-hidden" for="subscribe-email">Введите вашу электронную почту</label>
               <input class="subscribe-field" type="email" id="subscribe-email" name="e-mail" placeholder="Ваш e-mail" autocomplete="email" required>
             </p>
-            <button class="subscribe-button button button--big button-secondary" type="submit">Подписаться</button>
+            <button class="subscribe-button button button--big button--secondary" type="submit">Подписаться</button>
           </form>
         </section>
       </main>
-
+      <!-- Подвал -->
       <footer class="page-footer">
         <ul class="social-list">
           <li class="social-item">

@@ -3,13 +3,14 @@
 
   <head>
     <meta charset="utf-8">
-    <title>Седона: Главная</title>
+    <title>Седона: Главная страница</title>
     <link rel="stylesheet" href="styles/styles.css">
   </head>
 
   <body>
 
     <div class="page-wrap">
+      <!-- Шапка -->
       <header class="page-header">
         <a class="page-header-logo-wrap" href="#" aria-current="page">
           <img class="page-header-logo" src="images/logo.svg" width="140" height="70" alt="Логотип города Седона">
@@ -44,10 +45,12 @@
       </header>
 
       <main class="main-index">
+        <!-- Первый экран -->
         <section class="hero">
           <h1 class="visually-hidden">Официальный сайт города Седона</h1>
           <img class="hero-image" src="images/hero-image.svg" width="458" height="352" alt="Банер с надписью «Добро пожаловать в великолепную Седону, потому что здесь круче чем в Гранд-Каньоне!» на фоне живописных окрестностей Седоны.">
         </section>
+        <!-- О нас -->
         <section class="about">
           <h2 class="visually-hidden">О Седоне</h2>
           <p class="about-title">Седона — небольшой городок в Аризоне, заслуживающий большего!</p>
@@ -77,6 +80,7 @@
             </li>
           </ul>
         </section>
+        <!-- Преимущества -->
         <section class="advantages">
           <h2 class="visually-hidden">Отдых в Седоне</h2>
           <p class="advantages-title">Приезжайте в Седону отдохнуть в комфорте и уюте!</p>
@@ -96,13 +100,15 @@
             </li>
           </ul>
         </section>
+        <!-- Поиск гостиницы -->
         <section class="offer">
           <h2 class="visually-hidden">Поиск гостиницы в Седоне</h2>
           <p class="offer-title">Заинтересовались?</p>
           <p class="offer-subtitle">Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
           <a class="offer-button button button--big button--primary" href="#">Поиск гостиницы в Седоне</a>
         </section>
-        <section class="subscribe">
+        <!-- Подписка -->
+        <section class="subscribe subscribe-bg">
           <h2 class="subscribe-title">Подпишитесь на рассылку</h2>
           <p class="subscribe-subtitle">Только полезная информация и никакого спама, честное бойскаутское!</p>
           <form class="subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
@@ -110,11 +116,11 @@
               <label class="visually-hidden" for="subscribe-email">Введите вашу электронную почту</label>
               <input class="subscribe-field" type="email" id="subscribe-email" name="e-mail" placeholder="Ваш e-mail" autocomplete="email" required>
             </p>
-            <button class="subscribe-button button button--big button-secondary" type="submit">Подписаться</button>
+            <button class="subscribe-button button button--big button--secondary" type="submit">Подписаться</button>
           </form>
         </section>
       </main>
-
+      <!-- Подвал -->
       <footer class="page-footer">
         <ul class="social-list">
           <li class="social-item">
