@@ -98,6 +98,7 @@ body {
 }
 
 .button {
+  display: inline-block;
   font-weight: 700;
   text-align: center;
   text-decoration: none;
@@ -316,4 +317,31 @@ body {
 
 .subscribe-subtitle {
   margin-bottom: 54px;
+}
+
+.subscribe-button {
+  padding: 8px 50px;
+  border-radius: 0 4px 4px 0;
+  border: none;
+  cursor: pointer;
+  -webkit-border-radius: 0 4px 4px 0;
+  -moz-border-radius: 0 4px 4px 0;
+  -ms-border-radius: 0 4px 4px 0;
+  -o-border-radius: 0 4px 4px 0;
+}
+
+.page-footer {
+  padding: 45px 10px;
+}
+
+.contact-phone {
+  font-style: normal;
+}
+
+.phone {
+  font-size: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: inherit;
+  text-decoration: none;
 }
