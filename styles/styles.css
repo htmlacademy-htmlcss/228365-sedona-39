@@ -26,6 +26,7 @@
   --color-gray: #E5E5E5;
   --color-gray-light: #F2F2F2;
   --color-error: #FF5757;
+  --color-focus: #68A2CA;
 
   --border-gray: 1px solid var(--color-gray);
   --border-gray-2: 2px solid var(--color-gray);
@@ -44,13 +45,13 @@
 
 /* Делаем стилизацию дефолтного фокуса */
 *:focus-visible {
-  outline: 3px solid var(--color-dark-primary);
-  outline-offset: 0.1rem;
-  border-radius: 0.125rem;
-  -webkit-border-radius: 0.125rem;
-  -moz-border-radius: 0.125rem;
-  -ms-border-radius: 0.125rem;
-  -o-border-radius: 0.125rem;
+  outline: 3px solid var(--color-focus);
+  outline-offset: -2px;
+  border-radius: inherit;
+  -webkit-border-radius: inherit;
+  -moz-border-radius: inherit;
+  -ms-border-radius: inherit;
+  -o-border-radius: inherit;
 }
 
 /* Убираем внутренние отступы слева и стандартный маркер, у которых есть атрибут с классом list */
@@ -81,7 +82,7 @@
   border: none;
 }
 
-/* Наследуем свойства шрифт для полей ввода */
+/* Наследуем свойства шрифта для полей ввода */
 input,
 textarea,
 select,
@@ -102,6 +103,7 @@ body {
   font-size: 22px;
   line-height: 1.2;
   font-weight: 400;
+  font-style: normal;
   color: var(--color-dark-secondary);
   background-color: var(--color-gray-light);
 }
@@ -173,21 +175,20 @@ body {
 }
 
 .page-container {
-  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 1200px;
   margin: 0 auto;
   background-color: var(--color-light);
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+}
+
+.page-container > main {
+  flex-grow: 1;
 }
 
 /** page-header */
-
-.page-header-logo-wrap {
-  margin-bottom: -6px;
-  align-self: flex-start;
-}
-
-.page-header-logo {
-  display: block;
-}
 
 .page-header,
 .navigation,
@@ -199,6 +200,17 @@ body {
 .page-header {
   position: relative;
   z-index: 10;
+  padding: 0 70px;
+}
+
+.page-header-logo-wrap {
+  margin-bottom: -6px;
+  align-self: flex-start;
+  margin-right: 44px;
+}
+
+.page-header-logo {
+  display: block;
 }
 
 /* Навигация */
@@ -246,30 +258,14 @@ body {
 
 /* Первая секция */
 .hero {
-  position: relative;
   padding: 51px 10px;
   padding-bottom: 82px;
   text-align: center;
   background-color: var(--color-dark-secondary);
-  background-image: url("../images/hero-bg-image.jpeg");
-  background-size: cover;
+  background-image: url("../images/mask-shape.svg"), url("../images/hero-bg-image.jpeg");
+  background-size: 100% auto, cover;
+	background-position: bottom, center;
   background-repeat: no-repeat;
-  background-position: center;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  top: auto;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 0;
-  min-height: 30px;
-  padding-bottom: 4.74%;
-  background-color: var(--color-light);
-  clip-path: polygon(0% 0%, 20.83% 41.67%, 20.83% 0%, 50% 100%, 79.17% 0%, 79.17% 41.67%, 100% 0%, 100% 100%, 0% 100%);
 }
 
 /* О нас */
@@ -288,7 +284,7 @@ body {
 }
 
 .about-subtitle {
-  margin-bottom: 90px;
+  margin-bottom: 69px;
 }
 
 .about-item-row {
@@ -377,6 +373,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex: 1 1 100%;
 }
 
 .advantages-item:nth-child(2n+1) {
@@ -518,7 +515,9 @@ body {
 
 /* Подвал */
 .page-footer {
-  padding: 45px 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 45px 70px;
 }
 
 .contact-phone {
@@ -534,7 +533,8 @@ body {
   -moz-text-decoration-line: none;
 }
 
-/* Страница каталога */
+/** Страница каталога */
+
 .inner-hero {
   padding: 35px 70px 70px 70px;
   color: var(--color-light);
@@ -571,6 +571,27 @@ body {
 }
 
 /* Фильтры */
+.catalog-filter {
+  display: flex;
+  gap: 70px;
+  justify-content: space-between;
+}
+
+.catalog-filter-set {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 1;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.catalog-filter-set:nth-child(2) {
+  margin-right: auto;
+}
+
 .catalog-filter-title {
   margin-bottom: 32px;
   font-size: 20px;
@@ -578,19 +599,55 @@ body {
   font-weight: 700;
 }
 
-.catalog-filter-set {
-  font-size: 18px;
-  line-height: 23px;
-  font-weight: 400;
+.catalog-filter-item:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.price-range {
+  display: flex;
+  gap: 2px;
+  width: 288px;
+  margin-bottom: 36px;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  -webkit-border-radius: var(--border-radius);
+  -moz-border-radius: var(--border-radius);
+  -ms-border-radius: var(--border-radius);
+  -o-border-radius: var(--border-radius);
 }
 
 .min-price,
 .max-price {
+  width: 100%;
   padding: 12px 20px;
+  border: none;
   font-weight: 700;
 }
 
+.price-range label {
+  position: relative;
+}
+
+.price-label {
+  position: absolute;
+  z-index: 20;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  color: var(--color-dark-primary);
+  opacity: 0.3;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+
+.filter-buttons {
+  align-self: flex-end;
+}
+
 .apply-button {
+  margin-bottom: 32px;
   padding: 8px 50px;
   border: none;
   cursor: pointer;
@@ -607,6 +664,11 @@ body {
   padding: 50px 70px;
 }
 
+.catalog-products-header {
+  display: flex;
+  align-items: flex-start;
+}
+
 .catalog-products-title {
   font-size: 30px;
   line-height: 36px;
@@ -615,13 +677,41 @@ body {
   text-transform: uppercase;
 }
 
+/* Сортировка */
 .select-control {
+  display: block;
+  width: 100%;
+  max-width: 290px;
+  margin: 0;
+  padding: 14px 20px;
+  border: var(--border-gray-2);
+  border-radius: var(--border-radius);
   font-size: 18px;
   line-height: 21px;
+  color: inherit;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("../images/arrow-down.svg");
+  background-position: right 20px top 50%;
+  background-size: 12px auto;
+  background-repeat: no-repeat;
+  -webkit-border-radius: var(--border-radius);
+  -moz-border-radius: var(--border-radius);
+  -ms-border-radius: var(--border-radius);
+  -o-border-radius: var(--border-radius);
 }
 
-/* Сортировка */
-.view-item > a {
+.select-control::-ms-expand {
+  display: none; /* Hide the default arrow in IE 10 and 11 */
+}
+
+.view-list {
+  display: flex;
+}
+
+.view-item > .button {
   width: 48px;
   height: 48px;
   background-size: auto;

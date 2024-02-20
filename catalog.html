@@ -118,46 +118,50 @@
                 <legend class="catalog-filter-title">Стоимость, ₽:</legend>
                 <p class="price-range">
                   <label for="min-price">
-                    от <input class="min-price" type="text" name="min" value="0" id="min-price" inputmode="numeric">
+                    <span class="price-label">от</span><input class="min-price" type="text" name="min" value="0" id="min-price" inputmode="numeric">
                   </label>
                   <label for="max-price">
-                    до <input class="max-price" type="text" name="max" value="9000" id="max-price" inputmode="numeric">
+                    <span class="price-label">до</span><input class="max-price" type="text" name="max" value="9000" id="max-price" inputmode="numeric">
                   </label>
                 </p>
                 <input class="price-slider" type="range" min="0" max="9000" value="0" step="100">
               </fieldset>
-              <button class="apply-button button button--small button--secondary" type="submit">Применить</button>
-              <button class="reset-button button button--small button--transparent" type="reset">Сбросить</button>
+              <div class="catalog-filter-set filter-buttons">
+                <button class="apply-button button button--small button--secondary" type="submit">Применить</button>
+                <button class="reset-button button button--small button--transparent" type="reset">Сбросить</button>
+              </div>
             </form>
           </section>
         </div>
         <!-- Каталог -->
         <section class="catalog-products">
-          <h2 class="catalog-products-title">Найдено гостиниц: <span>38</span></h2>
-          <!-- Сортировка -->
-          <select class="select-control" name="sort" aria-label="Выпадающий список для сортировки">
-            <option value="popular">Сначала популярные</option>
-            <option value="cheap" selected>Сначала дешёвые</option>
-            <option value="expensive">Сначала дорогие</option>
-          </select>
-          <!-- Вид отображения -->
-          <ul class="view-list">
-            <li class="view-item">
-              <a class="grid-view-button button button--border button--current" href="#">
-                <span class="visually-hidden">Смотреть в виде сетки.</span>
-              </a>
-            </li>
-            <li class="view-item">
-              <a class="extended-view-button button button--border " href="#">
-                <span class="visually-hidden">Смотреть расширенные карточки.</span>
-              </a>
-            </li>
-            <li class="view-item">
-              <a class="list-view-button button button--border" href="#">
-                <span class="visually-hidden">Смотреть списком.</span>
-              </a>
-            </li>
-          </ul>
+          <div class="catalog-products-header">
+            <h2 class="catalog-products-title">Найдено туров: <span>38</span></h2>
+            <!-- Сортировка -->
+            <select class="select-control" name="sort" aria-label="Выпадающий список для сортировки">
+              <option value="popular">Сначала популярные</option>
+              <option value="cheap" selected>Сначала дешёвые</option>
+              <option value="expensive">Сначала дорогие</option>
+            </select>
+            <!-- Вид отображения -->
+            <ul class="view-list">
+              <li class="view-item">
+                <a class="grid-view-button button button--border button--current" href="#">
+                  <span class="visually-hidden">Смотреть в виде сетки.</span>
+                </a>
+              </li>
+              <li class="view-item">
+                <a class="extended-view-button button button--border " href="#">
+                  <span class="visually-hidden">Смотреть расширенные карточки.</span>
+                </a>
+              </li>
+              <li class="view-item">
+                <a class="list-view-button button button--border" href="#">
+                  <span class="visually-hidden">Смотреть списком.</span>
+                </a>
+              </li>
+            </ul>
+          </div>
           <!-- Список гостиниц -->
           <ul class="product-list">
             <li class="product-card">
