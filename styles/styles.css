@@ -789,44 +789,31 @@ body {
   padding: 8px 18px;
 }
 
-.product-card-stars-5 {
+.product-card-stars {
   background-image: url("../images/star.svg");
   background-repeat: repeat-x;
   background-size: 18px 17px;
-  width: 90px;
   height: 17px;
+}
+
+.product-card-stars-5 {
+  width: 90px;
 }
 
 .product-card-stars-4 {
-  background-image: url("../images/star.svg");
-  background-repeat: repeat-x;
-  background-size: 18px 17px;
   width: 72px;
-  height: 17px;
 }
 
 .product-card-stars-3 {
-  background-image: url("../images/star.svg");
-  background-repeat: repeat-x;
-  background-size: 18px 17px;
   width: 54px;
-  height: 17px;
 }
 
 .product-card-stars-2 {
-  background-image: url("../images/star.svg");
-  background-repeat: repeat-x;
-  background-size: 18px 17px;
   width: 36px;
-  height: 17px;
 }
 
 .product-card-stars-1 {
-  background-image: url("../images/star.svg");
-  background-repeat: repeat-x;
-  background-size: 18px 17px;
   width: 18px;
-  height: 17px;
 }
 
 .product-card-rating {
