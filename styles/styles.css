@@ -920,21 +920,15 @@ body {
   -o-transition: background-color 0.3s, opacity 0.3s;
 }
 
-.social-link:hover {
+.social-link:hover,
+.social-link:active,
+.social-link:focus,
+.social-link:focus-visible {
   background-color: var(--color-secondary-darker);
 }
 
 .social-link:active {
-  background-color: var(--color-secondary-darker);
   opacity: 0.3;
-}
-
-.social-link:focus {
-  background-color: var(--color-secondary-darker);
-}
-
-.social-link:focus-visible {
-  background-color: var(--color-secondary-darker);
 }
 
 .icon-vk {
