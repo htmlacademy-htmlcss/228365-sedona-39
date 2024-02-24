@@ -924,10 +924,6 @@ body {
   opacity: 0.3;
 }
 
-.social-link:focus {
-  background-color: var(--color-secondary-darker);
-}
-
 .social-link:focus-visible {
   background-color: var(--color-secondary-darker);
 }
