@@ -928,6 +928,10 @@ body {
   background-color: var(--color-secondary-darker);
 }
 
+.social-link:focus-visible {
+  background-color: var(--color-secondary-darker);
+}
+
 .icon-vk {
   mask-image: url("../images/icons/social-icon-vk.svg");
   -webkit-mask-image: url("../images/icons/social-icon-vk.svg");
