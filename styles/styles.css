@@ -201,7 +201,6 @@ body {
 
 .page-header {
   position: relative;
-  z-index: 10;
   padding: 0 70px;
 }
 
@@ -243,6 +242,13 @@ body {
   font-weight: 700;
   color: var(--color-dark-primary);
   text-decoration: none;
+  text-align: center;
+}
+
+.navigation-link--current {
+  box-shadow: inset 0 -2px 0 0 var(--color-primary);
+  -webkit-box-shadow: inset 0 -2px 0 0 var(--color-primary);
+  -moz-box-shadow: inset 0 -2px 0 0 var(--color-primary);
 }
 
 .navigation-user-list {
@@ -250,15 +256,26 @@ body {
 }
 
 .navigation-user-list .navigation-link {
-  position: relative;
   min-width: 20px;
   min-height: 20px;
   padding: 22px 12px;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.navigation-user-search {
+  background-image: url("../images/icons/search-icon.svg");
+}
+
+.navigation-user-favorite {
+  background-image: url("../images/icons/favorite-icon.svg");
 }
 
 .favorite-results {
   position: absolute;
   top: 0;
+  display: block;
   min-width: 20px;
   min-height: 20px;
   padding: 5px 5px 5px 4px;
@@ -274,12 +291,6 @@ body {
   -o-border-radius: 10px;
 }
 
-.navigation-link--current {
-  box-shadow: inset 0 -2px 0 0 var(--color-primary);
-  -webkit-box-shadow: inset 0 -2px 0 0 var(--color-primary);
-  -moz-box-shadow: inset 0 -2px 0 0 var(--color-primary);
-}
-
 .page-header-button {
   padding: 8px 34px;
 }
@@ -291,7 +302,7 @@ body {
   padding-top: 51px;
   padding-bottom: 82px;
   text-align: center;
-  background-color: var(--color-dark-secondary);
+  background-color: var(--color-secondary-middle);
   background-image: url("../images/mask-shape.svg"), url("../images/hero-bg-image.jpeg");
   background-size: 100% auto, cover;
 	background-position: bottom, center;
@@ -472,31 +483,6 @@ body {
   line-height: 21px;
 }
 
-/* Предложение найти гостиницу */
-.offer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 96px 0;
-}
-
-.offer-title {
-  margin-bottom: 20px;
-  font-size: 30px;
-  line-height: 36px;
-  font-weight: 700;
-  color: var(--color-dark-primary);
-  text-transform: uppercase;
-}
-
-.offer-subtitle {
-  margin-bottom: 54px;
-}
-
-.offer-button {
-  padding: 8px 50px;
-}
-
 /** Страница каталога */
 
 .inner-hero {
@@ -522,6 +508,7 @@ body {
 .breadcrumbs-list {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .item-icon {
@@ -595,6 +582,7 @@ body {
 .max-price {
   width: 100%;
   padding: 12px 20px;
+  padding-right: 50px;
   border: none;
   font-weight: 700;
 }
@@ -740,7 +728,9 @@ body {
 
 .product-card-image {
   display: block;
-  width: 300px;
+  aspect-ratio: 100 / 70.66;
+  object-fit: cover;
+  background-color: var(--color-secondary-middle);
 }
 
 .product-card {
@@ -830,8 +820,37 @@ body {
   background-color: var(--color-gray-light);
 }
 
+/* Предложение найти гостиницу */
+.offer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 96px 0;
+  text-align: center;
+}
+
+.offer-title {
+  margin-bottom: 20px;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+  color: var(--color-dark-primary);
+  text-transform: uppercase;
+}
+
+.offer-subtitle {
+  margin-bottom: 54px;
+}
+
+.offer-button {
+  padding: 8px 50px;
+}
+
 /* Подписка  */
 .subscribe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding-top: 96px;
   padding-bottom: 104px;
   text-align: center;
@@ -863,32 +882,40 @@ body {
   margin-bottom: 54px;
 }
 
-.subscribe-form {
+.subscribe-form,
+.subscribe-form-inner {
   display: flex;
-  justify-content: center;
 }
 
-.subscribe-button {
-  padding: 8px 50px;
-  border: none;
-  border-radius: 0 4px 4px 0;
-  -webkit-border-radius: 0 4px 4px 0;
-  -moz-border-radius: 0 4px 4px 0;
-  -ms-border-radius: 0 4px 4px 0;
-  -o-border-radius: 0 4px 4px 0;
+.subscribe-form {
+  justify-content: center;
+  min-width: 684px;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  -webkit-border-radius: var(--border-radius);
+  -moz-border-radius: var(--border-radius);
+  -ms-border-radius: var(--border-radius);
+  -o-border-radius: var(--border-radius);
+}
+
+.subscribe-form-inner {
+  flex-grow: 1;
+  min-width: 300px;
 }
 
 .subscribe-field {
+  flex-grow: 1;
   padding: 14px 20px;
   font-size: 18px;
   line-height: 24px;
   background-color: var(--color-gray-light);
   border: none;
-  border-radius: 4px 0 0 4px;
-  -webkit-border-radius: 4px 0 0 4px;
-  -moz-border-radius: 4px 0 0 4px;
-  -ms-border-radius: 4px 0 0 4px;
-  -o-border-radius: 4px 0 0 4px;
+}
+
+.subscribe-button {
+  padding: 8px 50px;
+  border: none;
+  border-radius: 0;
 }
 
 /* Подвал */
@@ -902,16 +929,20 @@ body {
 
 .social-list {
   display: flex;
+  flex-wrap: wrap;
+  flex: 0 2 144px;
 }
 
 .social-link {
   display: block;
   min-width: 48px;
   min-height: 40px;
+  -webkit-mask-size: auto;
   mask-size: auto;
+  -webkit-mask-position: 50% 50%;
   mask-position: 50% 50%;
-  mask-repeat: no-repeat;
   -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
   background-color: var(--color-secondary);
   transition: background-color 0.3s, opacity 0.3s;
   -webkit-transition: background-color 0.3s, opacity 0.3s;
@@ -946,8 +977,8 @@ body {
   -webkit-mask-image: url("../images/icons/social-icon-youtube.svg");
 }
 
-
 .contact-phone {
+  flex-shrink: 0;
   font-style: normal;
 }
 
@@ -958,10 +989,28 @@ body {
   text-align: center;
   color: var(--color-dark-primary);
   text-decoration-line: none;
+  transition: color 0.3s;
   -moz-text-decoration-line: none;
+  -webkit-transition:;
+  -moz-transition:;
+  -ms-transition:;
+  -o-transition:;
+}
+
+.phone:hover {
+  color: var(--color-primary);
 }
 
 .developer-logo {
   display: block;
   width: 115px;
+  transition: filter 0.3s;
+  -webkit-transition: filter 0.3s;
+  -moz-transition: filter 0.3s;
+  -ms-transition: filter 0.3s;
+  -o-transition: filter 0.3s;
+}
+
+.developer-link:hover .developer-logo {
+  filter: invert(39%) sepia(13%) saturate(629%) hue-rotate(335deg) brightness(94%) contrast(87%);
 }
