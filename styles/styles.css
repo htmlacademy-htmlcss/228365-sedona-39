@@ -84,10 +84,12 @@
 }
 
 /* Наследуем свойства шрифта для полей ввода */
+:where(
 input,
 textarea,
 select,
-button {
+button
+):where([class]) {
   font: inherit;
 }
 
@@ -202,12 +204,12 @@ body {
 .page-header {
   position: relative;
   padding: 0 70px;
+  column-gap: 44px;
 }
 
 .page-header-logo-wrap {
   margin-bottom: -6px;
   align-self: flex-start;
-  margin-right: 44px;
 }
 
 .page-header-logo {
@@ -218,17 +220,13 @@ body {
 /* Навигация */
 .navigation {
   flex-grow: 1;
+  column-gap: 20px;
 }
 
 .navigation-list:first-child {
-  max-width: 500px;
   margin-right: auto;
   flex-wrap: wrap;
-}
-
-.navigation-list:first-child >
-.navigation-item:not(:last-child) {
-  margin-right: 32px;
+  column-gap: 32px;
 }
 
 .navigation-link {
@@ -251,14 +249,11 @@ body {
   -moz-box-shadow: inset 0 -2px 0 0 var(--color-primary);
 }
 
-.navigation-user-list {
-  margin-right: 20px;
-}
-
 .navigation-user-list .navigation-link {
-  min-width: 20px;
-  min-height: 20px;
-  padding: 22px 12px;
+  min-width: 44px;
+  min-height: 64px;
+  padding: 20px 12px;
+  margin: 0;
   background-size: auto;
   background-repeat: no-repeat;
   background-position: center;
@@ -274,7 +269,8 @@ body {
 
 .favorite-results {
   position: absolute;
-  top: 0;
+  top: 11px;
+  left: 20px;
   display: block;
   min-width: 20px;
   min-height: 20px;
@@ -282,6 +278,7 @@ body {
   font-size: 10px;
   line-height: 10px;
   font-weight: 400;
+  text-align: center;
   border-radius: 10px;
   color: var(--color-light);
   background-color: var(--color-accent);
@@ -367,7 +364,6 @@ body {
   display: block;
   width: 800px;
   height: 100%;
-  object-fit: cover;
 }
 
 .about-item-title {
@@ -533,6 +529,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  gap: 70px;
 }
 
 .catalog-filter-set {
@@ -544,10 +541,6 @@ body {
   font-size: 18px;
   line-height: 24px;
   font-weight: 400;
-}
-
-.catalog-filter-set:not(:last-child) {
-  margin-right: 70px;
 }
 
 .catalog-filter-set:nth-child(2) {
@@ -624,13 +617,13 @@ body {
 
 .catalog-products-header {
   display: flex;
-  align-items: center;
   gap: 70px;
   margin-bottom: 40px;
 }
 
 .catalog-products-title {
   margin-right: auto;
+  align-self: center;
   font-size: 30px;
   line-height: 36px;
   font-weight: 700;
@@ -670,7 +663,6 @@ body {
 
 .view-list {
   display: flex;
-  align-self: flex-start;
   gap: 8px;
 }
 
@@ -702,6 +694,11 @@ body {
   margin-bottom: 40px;
 }
 
+.product-card {
+  font-size: 18px;
+  line-height: 21px;
+}
+
 .product-card-article {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -711,6 +708,13 @@ body {
   box-shadow: inset 0 0 0 1px var(--color-gray-middle);
   -webkit-box-shadow: inset 0 0 0 1px var(--color-gray-middle);
   -moz-box-shadow: inset 0 0 0 1px var(--color-gray-middle);
+}
+
+.product-card-title {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 700;
+  color: var(--color-dark-primary);
 }
 
 .product-card-title,
@@ -733,24 +737,13 @@ body {
   background-color: var(--color-secondary-middle);
 }
 
-.product-card {
-  font-size: 18px;
-  line-height: 21px;
-}
-
-.product-card-title {
-  font-size: 24px;
-  line-height: 28px;
-  font-weight: 700;
-  color: var(--color-dark-primary);
-}
-
 .product-card-price {
   justify-self: end;
 }
 
 .product-card-button {
   padding: 8px 18px;
+  align-self: start;
 }
 
 .product-card-stars {
@@ -806,13 +799,15 @@ body {
 /* Пагинация */
 .pagination-list {
   display: flex;
-  column-gap: 8px;
+  gap: 8px;
 }
 
 .pagination-link {
-  padding: 12px 18px;
-  width: 60px;
+  display: block;
+  padding: 12px;
+  min-width: 60px;
   height: 60px;
+  text-align: center;
 }
 
 .pagination--current {
