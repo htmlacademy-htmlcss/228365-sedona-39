@@ -928,6 +928,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  column-gap: 40px;
   padding: 45px 70px;
   padding-bottom: 35px;
 }
@@ -935,7 +936,7 @@ body {
 .social-list {
   display: flex;
   flex-wrap: wrap;
-  flex: 0 2 144px;
+  flex: 0 0 144px;
 }
 
 .social-link {
