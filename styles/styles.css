@@ -133,6 +133,8 @@ body {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+  border: none;
+  cursor: pointer;
   border-radius: var(--border-radius);
   -webkit-border-radius: var(--border-radius);
   -moz-border-radius: var(--border-radius);
@@ -306,6 +308,11 @@ body {
   background-repeat: no-repeat;
 }
 
+.hero-image {
+  display: block;
+  margin: 0 auto;
+}
+
 /* О нас */
 .about {
   padding-top: 69px;
@@ -368,6 +375,7 @@ body {
 
 .about-item-title {
   margin-bottom: 29px;
+  padding: 0 12%;
   font-size: 24px;
   line-height: 28px;
   font-weight: 700;
@@ -504,6 +512,7 @@ body {
 .breadcrumbs-list {
   display: flex;
   align-items: center;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
@@ -511,7 +520,6 @@ body {
   display: flex;
   width: 12px;
   height: 15px;
-  margin-right: 10px;
   background-image: url("../images/icons/breadcrumbs-home-icon.svg");
   background-size: auto;
   background-repeat: no-repeat;
@@ -519,9 +527,21 @@ body {
 }
 
 .breadcrumbs-link {
-  display: block;
+  display: flex;
   font-size: 16px;
   line-height: 21px;
+}
+
+.breadcrumbs-item:not(:first-child) .breadcrumbs-link::before {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 21px;
+  margin-right: 10px;
+  background-image: url("../images/arrow-right.svg");
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* Фильтры */
@@ -601,12 +621,10 @@ body {
 .apply-button {
   margin-bottom: 32px;
   padding: 8px 50px;
-  border: none;
 }
 
 .reset-button {
   padding: 8px 50px;
-  border: transparent;
 }
 
 /* Каталог */
@@ -651,6 +669,7 @@ body {
   background-position: right 20px top 50%;
   background-size: 12px auto;
   background-repeat: no-repeat;
+  cursor: pointer;
   -webkit-border-radius: var(--border-radius);
   -moz-border-radius: var(--border-radius);
   -ms-border-radius: var(--border-radius);
@@ -919,7 +938,6 @@ body {
 
 .subscribe-button {
   padding: 8px 50px;
-  border: none;
   border-radius: 0;
 }
 
