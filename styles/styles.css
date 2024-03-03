@@ -215,7 +215,7 @@ body {
   opacity: 0.3;
 }
 
-.button--transparent:focus {
+.button--transparent:focus-visible {
   outline: 3px solid var(--color-secondary);
   outline-offset: -3px;
 }
@@ -878,6 +878,7 @@ body {
   grid-row: 1 / 2;
   color: inherit;
   text-decoration-line: none;
+  transition: color 0.3s, opacity 0.3s;
 }
 
 .product-card-image {
@@ -885,6 +886,21 @@ body {
   aspect-ratio: 100 / 70.66;
   object-fit: cover;
   background-color: var(--color-secondary-middle);
+  transition: opacity 0.3s;
+}
+
+.product-card-link:hover,
+.product-card-link:focus {
+  color: var(--color-primary);
+}
+
+.product-card-link:hover .product-card-image {
+  opacity: 0.8;
+}
+
+.product-card-link:active{
+  color: var(--color-primary);
+  opacity: 0.3;
 }
 
 .product-card-type {
