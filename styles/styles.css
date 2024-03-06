@@ -317,7 +317,7 @@ body {
   transition: transform 0.3s, height 0.3s;
 }
 
-.navigation-link:hover:not(.navigation-link--current),
+.navigation-link[href]:hover,
 .navigation-link:hover::after,
 .navigation-link:focus,
 .navigation-link:focus::after {
@@ -326,7 +326,7 @@ body {
   outline: none;
 }
 
-.navigation-link:active:not(.navigation-link--current)::after {
+.navigation-link[href]:active::after {
   height: 6px;
 }
 
@@ -630,6 +630,15 @@ body {
   line-height: 21px;
   color: var(--color-light);
   text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.breadcrumbs-link[href]:hover {
+  opacity: 0.6;
+}
+
+.breadcrumbs-link[href]:active {
+  opacity: 0.3;
 }
 
 .breadcrumbs-item {
@@ -696,6 +705,7 @@ body {
   grid-template-columns: min-content minmax(115px, 1fr);
   column-gap: 16px;
   transition: opacity 0.3s, outline 0.3s;
+  cursor: pointer;
 }
 
 .control-mark {
