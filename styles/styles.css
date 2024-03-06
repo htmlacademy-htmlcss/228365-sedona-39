@@ -779,6 +779,7 @@ body {
   border: none;
   background-color: var(--color-gray-light);
   transition: background-color 0.3s;
+  -moz-appearance: textfield;
 }
 
 .range-input:hover {
@@ -861,7 +862,6 @@ body {
 
 .range-input::-webkit-outer-spin-button,
 .range-input::-webkit-inner-spin-button {
-  -moz-appearance: textfield;
   -webkit-appearance: none;
   appearance: none;
   margin: 0;
