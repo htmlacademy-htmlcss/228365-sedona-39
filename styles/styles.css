@@ -21,6 +21,7 @@
   --color-secondary-darker: #68A2CA;
   --color-secondary-middle: #E6F0F6;
   --color-secondary-light: #F0F6FA;
+  --color-ternary: #3F5E72;
   --color-accent: #7DB54F;
   --color-accent-darker: #6C9E42;
   --color-dark-primary: #000000;
@@ -31,6 +32,7 @@
   --color-gray-middle: #e6e6e6;
   --color-gray-light: #F2F2F2;
   --color-error: #FF5757;
+  --color-error-light: #ffdddd;
 
   --border-gray: 1px solid var(--color-gray);
   --border-gray-2: 2px solid var(--color-gray);
@@ -67,12 +69,6 @@
   dl
 ):where([class]) {
   margin-block: 0;
-}
-
-:where(fieldset[class]) {
-  margin-left: 0;
-  padding: 0;
-  border: none;
 }
 
 /* Наследуем свойства шрифта для полей ввода */
@@ -128,24 +124,10 @@ body {
   border: none;
   border-radius: var(--border-radius);
   transition: background-color 0.3s, color 0.3s, opacity 0.3s, border 0.3s;
-  -webkit-transition: background-color 0.3s, color 0.3s, opacity 0.3s, border 0.3s;
-  -moz-transition: background-color 0.3s, color 0.3s, opacity 0.3s, border 0.3s;
-  -ms-transition: background-color 0.3s, color 0.3s, opacity 0.3s, border 0.3s;
-  -o-transition: background-color 0.3s, color 0.3s, opacity 0.3s, border 0.3s;
 }
 
 .button:hover {
   cursor: pointer;
-}
-
-.button:disabled {
-  background-color: var(--color-gray);
-}
-
-.button:disabled:hover {
-  background-color: var(--color-gray);
-  outline: none;
-  cursor: default;
 }
 
 .button--small {
@@ -164,7 +146,7 @@ body {
 }
 
 .button--primary:hover,
-.button--primary:focus {
+.button--primary:focus-visible {
   background-color: var(--color-primary-darker);
 }
 
@@ -179,7 +161,7 @@ body {
 }
 
 .button--secondary:hover,
-.button--secondary:focus  {
+.button--secondary:focus-visible  {
   background-color: var(--color-secondary-darker);
 }
 
@@ -242,6 +224,17 @@ body {
 
 .button--current {
   border: var(--border-dark-primary-2);
+  pointer-events: none;
+}
+
+.button:disabled,
+.button:disabled:hover {
+  background-color: var(--color-gray);
+}
+
+.button:disabled:hover {
+  outline: none;
+  cursor: default;
 }
 
 .page-container {
@@ -619,6 +612,7 @@ body {
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
+  padding-left: 1px;
 }
 
 .item-icon {
@@ -658,16 +652,17 @@ body {
 .catalog-filter {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: flex-start;
   gap: 70px;
 }
 
 .catalog-filter-set {
   display: flex;
   flex-direction: column;
+  flex-shrink: 1;
   margin: 0;
   padding: 0;
-  flex-shrink: 1;
+  border: none;
   font-size: 18px;
   line-height: 24px;
   font-weight: 400;
@@ -679,25 +674,94 @@ body {
 
 .catalog-filter-title {
   margin-bottom: 32px;
+  margin-left: -2px;
   font-size: 20px;
   line-height: 24px;
   font-weight: 700;
+  text-transform: capitalize;
 }
 
-.catalog-filter-item:not(:last-child) {
-  margin-bottom: 16px;
+.catalog-filter-set:last-child {
+  padding-top: 56px;
+}
+
+.catalog-filter-list {
+  display: grid;
+  row-gap: 16px;
+}
+
+.control {
+  display: grid;
+  justify-content: start;
+  grid-template-columns: min-content minmax(115px, 1fr);
+  column-gap: 16px;
+  transition: opacity 0.3s, outline 0.3s;
+}
+
+.control-mark {
+  position: relative;
+  top: 1px;
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-light);
+  border-radius: var(--border-radius);
+}
+
+.control:hover {
+  opacity: 0.6;
+}
+
+.control:focus-within .control-mark {
+  outline: 3px solid var(--color-secondary);
+}
+
+.control:active {
+  opacity: 0.3;
+}
+
+.control-input:disabled + .control-mark {
+  opacity: 0.3;
+}
+
+.control-input[type="checkbox"]:checked + .control-mark::before {
+  position: absolute;
+  top: 5px;
+  left: 4px;
+  width: 13px;
+  height: 11px;
+  background-image: url("../images/check-mark.svg");
+  content: "";
+}
+
+.control-input[type="radio"] + .control-mark {
+  border-radius: 50%;
+}
+
+.control-input[type="radio"]:checked + .control-mark::before {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-ternary);
+  border-radius: 50%;
+  content: "";
+}
+
+.control-label {
+  line-height: 23px;
 }
 
 .price-range {
   display: flex;
+  align-items: center;
   gap: 2px;
   width: 288px;
-  margin-bottom: 36px;
+  margin-bottom: 44px;
   border-radius: var(--border-radius);
 }
 
-.min-price-field,
-.max-price-field {
+.range-input {
   width: 100%;
   padding: 12px 20px;
   padding-right: 50px;
@@ -707,13 +771,11 @@ body {
   transition: background-color 0.3s;
 }
 
-.min-price-field:hover,
-.max-price-field:hover {
+.range-input:hover {
   background-color: var(--color-gray-middle);
 }
 
-.min-price-field:focus,
-.max-price-field:focus {
+.range-input:focus {
   background-color: var(--color-gray-middle);
   outline: 3px solid var(--color-secondary);
 }
@@ -739,6 +801,58 @@ body {
   color: var(--color-dark-primary);
   opacity: 0.3;
   pointer-events: none;
+}
+
+.range-scale {
+  position: relative;
+  height: 4px;
+  background-color: var(--color-light-opacity-3);
+}
+
+.range-bar {
+  position: absolute;
+  height: 4px;
+  background-color: var(--color-light);
+}
+
+.range-handle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: 50%;
+  transform: translateY(50%);
+  border-radius: 5px;
+  background-color: var(--color-light);
+  transition: all 0.3s;
+}
+
+.range-handle:hover,
+.range-handle:focus-visible {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.range-handle:focus-visible {
+  outline: 3px solid var(--color-secondary);
+}
+
+.range-handle:active {
+  outline: 2px solid var(--color-secondary);
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.4);
+  cursor: grabbing;
+}
+
+.handle-min {
+  left: -10px;
+}
+
+.handle-max {
+  right: -10px;
+}
+
+.range-input::-webkit-outer-spin-button,
+.range-input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
 }
 
 .apply-button {
@@ -776,7 +890,7 @@ body {
 .select-control {
   display: block;
   width: 100%;
-  max-width: 290px;
+  max-width: 292px;
   margin: 0;
   padding: 12px 20px;
   border: var(--border-gray-2);
@@ -890,7 +1004,7 @@ body {
 }
 
 .product-card-link:hover,
-.product-card-link:focus {
+.product-card-link:focus-visible {
   color: var(--color-primary);
 }
 
@@ -964,6 +1078,7 @@ body {
 .pagination-list {
   display: flex;
   gap: 8px;
+  flex-wrap: wrap;
 }
 
 .pagination-link {
@@ -974,9 +1089,16 @@ body {
   text-align: center;
 }
 
+.pagination-link:hover,
+.pagination-link:focus-visible {
+  outline: 1px solid var(--color-secondary);
+  outline-offset: 0;
+}
+
 .pagination-separator .pagination-link {
   font-size: 22px;
   cursor: default;
+  outline: none;
 }
 
 .pagination--current,
@@ -984,6 +1106,7 @@ body {
   color: var(--color-dark-primary);
   background-color: var(--color-gray-light);
   cursor: default;
+  outline: none;
 }
 
 /* Предложение найти гостиницу */
@@ -1072,17 +1195,38 @@ body {
   background-color: var(--color-gray-light);
   border: none;
   border-radius: 4px 0 0 4px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, outline 0.1s;
 }
 
-.subscribe-field:hover {
+.subscribe-field:hover,
+.subscribe-field:focus {
   background-color: var(--color-gray-middle);
 }
 
 .subscribe-field:focus {
-  background-color: var(--color-gray-middle);
   outline: 3px solid var(--color-secondary);
   outline-offset: -3px;
+}
+
+.subscribe-field:disabled,
+.subscribe-field:disabled:hover {
+  background-color: var(--color-gray-middle);
+}
+
+.subscribe-field:user-invalid,
+.subscribe-field:focus:user-invalid {
+  outline: 3px solid var(--color-error);
+  outline-offset: -3px;
+  background-color: var(--color-error-light);
+}
+
+.subscribe-field::placeholder {
+  color: var(--color-dark-primary);
+  opacity: 0.6;
+}
+
+.subscribe-field:disabled::placeholder {
+  color: var(--color-light);
 }
 
 .subscribe-button {
