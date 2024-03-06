@@ -722,6 +722,10 @@ body {
 }
 
 .control-mark:focus-visible {
+
+}
+
+.control-input:focus-visible + .control-mark {
   outline: 3px solid var(--color-secondary);
 }
 
