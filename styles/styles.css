@@ -28,6 +28,7 @@
   --color-dark-secondary: #333333;
   --color-light: #FFFFFF;
   --color-light-opacity-3: rgba(255, 255, 255, 0.3);
+  --color-light-opacity-8: rgba(255, 255, 255, 0.8);
   --color-gray: #E5E5E5;
   --color-gray-middle: #e6e6e6;
   --color-gray-light: #F2F2F2;
@@ -110,6 +111,7 @@ body {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+  transform: scale(0);
 }
 
 /** buttons */
@@ -123,7 +125,7 @@ body {
   text-transform: uppercase;
   border: none;
   border-radius: var(--border-radius);
-  transition: background-color 0.3s, color 0.3s, opacity 0.3s, border 0.3s;
+  transition: background-color 0.3s, color 0.3s, opacity 0.3s, border 0.3s, outline 0.1s;
 }
 
 .button:hover {
@@ -417,13 +419,18 @@ body {
   text-align: center;
 }
 
-.about-title {
-  margin-bottom: 25px;
+/* h2 */
+.title {
+  margin-bottom: 20px;
   font-size: 30px;
   line-height: 36px;
   font-weight: 700;
   color: var(--color-dark-primary);
   text-transform: uppercase;
+}
+
+.about-title {
+  margin-bottom: 25px;
 }
 
 .about-subtitle {
@@ -511,15 +518,6 @@ body {
   text-align: center;
 }
 
-.advantages-title {
-  margin-bottom: 20px;
-  font-size: 30px;
-  line-height: 36px;
-  font-weight: 700;
-  color: var(--color-dark-primary);
-  text-transform: uppercase;
-}
-
 .advantages-list {
   display: flex;
   flex-wrap: wrap;
@@ -583,6 +581,121 @@ body {
 .advantages-description {
   font-size: 18px;
   line-height: 21px;
+}
+
+/** Модалка */
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-light-opacity-8);
+}
+
+.modal--active {
+  display: flex;
+}
+
+.modal {
+  position: relative;
+  margin: auto;
+  padding: 64px 70px;
+  background-color: var(--color-light);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  border-radius: 30px;
+}
+
+.modal-search {
+  width: 717px;
+  min-height: 576px;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 64px;
+  right: 52px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+}
+
+.modal-close-button::before {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-image: url("../images/close.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  content: "";
+  transition: opacity 0.3s;
+}
+
+.modal-close-button:hover,
+.modal-close-button:focus-visible {
+  background-color: var(--color-gray-middle);
+}
+
+.modal-close-button:focus-visible {
+  outline: 3px solid var(--color-secondary);
+}
+
+.modal-close-button:active::before {
+  opacity: 0.3;
+}
+
+.modal-title {
+  margin-bottom: 64px;
+}
+
+.field {
+  padding: 12px 20px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: var(--color-gray-light);
+  border: none;
+  transition: background-color 0.3s, outline 0.1s;
+}
+
+.field::placeholder {
+  color: var(--color-dark-primary);
+  opacity: 0.6;
+}
+
+.field:disabled::placeholder {
+  color: var(--color-light);
+}
+
+.date-field {
+  font-weight: 700;
+  border-radius: 4px;
+}
+
+.date-field:hover,
+.date-field:focus {
+  background-color: var(--color-gray-middle);
+}
+
+.date-field:focus {
+  outline: 3px solid var(--color-secondary);
+}
+
+.date-field:disabled,
+.date-field:disabled:hover {
+  background-color: var(--color-gray-middle);
+}
+
+.date-field:user-invalid,
+.date-field:focus:user-invalid {
+  outline: 3px solid var(--color-error);
+  background-color: var(--color-error-light);
+}
+
+.modal-button {
+  padding: 12px 36px;
+  border-radius: 10px;
 }
 
 /** Страница каталога */
@@ -780,6 +893,7 @@ body {
   background-color: var(--color-gray-light);
   transition: background-color 0.3s;
   -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 .range-input:hover {
@@ -862,7 +976,6 @@ body {
 
 .range-input::-webkit-outer-spin-button,
 .range-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
   appearance: none;
   margin: 0;
 }
@@ -890,12 +1003,8 @@ body {
 
 .catalog-products-title {
   margin-right: auto;
+  margin-bottom: 0;
   align-self: center;
-  font-size: 30px;
-  line-height: 36px;
-  font-weight: 700;
-  color: var(--color-dark-primary);
-  text-transform: uppercase;
 }
 
 /* Сортировка */
@@ -1130,15 +1239,6 @@ body {
   text-align: center;
 }
 
-.offer-title {
-  margin-bottom: 20px;
-  font-size: 30px;
-  line-height: 36px;
-  font-weight: 700;
-  color: var(--color-dark-primary);
-  text-transform: uppercase;
-}
-
 .offer-subtitle {
   margin-bottom: 54px;
 }
@@ -1163,15 +1263,6 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-}
-
-.subscribe-title {
-  margin-bottom: 20px;
-  font-size: 30px;
-  line-height: 36px;
-  font-weight: 700;
-  color: var(--color-dark-primary);
-  text-transform: uppercase;
 }
 
 .subscribe-bg .subscribe-title,
@@ -1202,12 +1293,7 @@ body {
 .subscribe-field {
   flex-grow: 1;
   padding: 14px 20px;
-  font-size: 18px;
-  line-height: 24px;
-  background-color: var(--color-gray-light);
-  border: none;
   border-radius: 4px 0 0 4px;
-  transition: background-color 0.3s, outline 0.1s;
 }
 
 .subscribe-field:hover,
@@ -1230,15 +1316,6 @@ body {
   outline: 3px solid var(--color-error);
   outline-offset: -3px;
   background-color: var(--color-error-light);
-}
-
-.subscribe-field::placeholder {
-  color: var(--color-dark-primary);
-  opacity: 0.6;
-}
-
-.subscribe-field:disabled::placeholder {
-  color: var(--color-light);
 }
 
 .subscribe-button {
