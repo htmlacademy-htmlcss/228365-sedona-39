@@ -158,37 +158,37 @@
         <section class="modal-content">
           <h2 class="modal-title title">Поиск гостиницы в седоне</h2>
           <form class="modal-search-form" action="https://echo.htmlacademy.ru/" method="post">
-            <p class="field-group">
+            <p class="field-group field-group-date">
               <label class="field-label" for="check-in">Дата заезда:</label>
               <input class="date-field field" type="text" id="check-in" name="check-in" placeholder="Укажите дату" required>
-              <span class="message-field">Мы не можем отправить вас в прошлое.</span>
+              <span class="message-field message-field--active">Мы не можем отправить вас в прошлое.</span>
             </p>
-            <p class="field-group">
+            <p class="field-group field-group-date">
               <label class="field-label" for="check-out">Дата выезда:</label>
               <input class="date-field field" type="text" id="check-out" name="check-out" placeholder="Укажите дату" required>
               <span class="message-field">На эти даты есть свободные номера. Пока есть.</span>
             </p>
-            <p class="field-group">
+            <p class="field-group field-group-visitors">
               <label class="field-label" for="adults">Взрослые:</label>
-              <button class="minus-plus-button" type="button">
+              <button class="minus-button minus-plus-button button" type="button">
                 <span class="visually-hidden">Убрать</span>
               </button>
-              <input class="date-field field" type="number" id="adults" name="adults" value="1" min="1" max="100">
-              <button class="minus-plus-button" type="button">
+              <input class="date-field number-field field" type="number" id="adults" name="adults" value="1" min="1" max="100">
+              <button class="plus-button minus-plus-button button" type="button">
                 <span class="visually-hidden">Добавить</span>
               </button>
             </p>
-            <p class="field-group">
-              <label class="field-label" for="childern">Дети:
-              <button class="info" type="button">
+            <p class="field-group field-group-visitors visitors-children">
+              <label class="field-label field-label-info" for="children">Дети:
+              <button class="info-button button" type="button">
                 <span class="visually-hidden">Посмотреть дополнительную информацию</span>
               </button>
               </label>
-              <button class="minus-plus-button" type="button">
+              <button class="minus-button minus-plus-button button" type="button">
                 <span class="visually-hidden">Убрать</span>
               </button>
-              <input class="date-field field" type="number" id="childern" name="childern" value="0" min="0" max="100">
-              <button class="minus-plus-button" type="button">
+              <input class="date-field number-field field" type="number" id="children" name="children" value="0" min="0" max="100">
+              <button class="plus-button minus-plus-button button" type="button">
                 <span class="visually-hidden">Добавить</span>
               </button>
             </p>
