@@ -782,33 +782,17 @@ body {
   grid-row: 1;
   z-index: 2;
   display: flex;
-  align-self: stretch;
-  width: 40px;
+  width: 20px;
+  padding: 0;
   background-color: transparent;
 }
 
 .minus-button {
   justify-self: start;
+  margin-left: 10px;
 }
 
-.minus-button::before {
-  display: block;
-  width: 20px;
-  height: 20px;
-  margin: auto;
-  background-color: var(--color-primary);
-  mask-size: auto;
-  mask-position: 50% 50%;
-  mask-repeat: no-repeat;
-  mask-image: url("../images/minus.svg");
-  opacity: 0.3;
-  content: "";
-}
-
-.plus-button {
-  justify-self: end;
-}
-
+.minus-button::before,
 .plus-button::before {
   display: block;
   width: 20px;
@@ -818,15 +802,46 @@ body {
   mask-size: auto;
   mask-position: 50% 50%;
   mask-repeat: no-repeat;
-  mask-image: url("../images/plus.svg");
   opacity: 0.3;
   content: "";
+  transition: background-color 0.3s, opacity 0.3s;
+}
+
+.minus-button::before {
+  mask-image: url("../images/minus.svg");
+}
+
+.plus-button {
+  justify-self: end;
+  margin-right: 10px;
+}
+
+.plus-button::before {
+  mask-image: url("../images/plus.svg");
 }
 
 .modal-button {
   grid-column: 1 / -1;
   padding: 12px 36px;
   border-radius: 10px;
+}
+
+.minus-button:hover::before,
+.plus-button:hover::before,
+.minus-button:focus-visible::before,
+.plus-button:focus-visible::before,
+.minus-button:active::before,
+.plus-button:active::before {
+  background-color: var(--color-dark-primary);
+  opacity: 1;
+}
+
+.minus-plus-button:focus-visible {
+  outline: 3px solid var(--color-secondary);
+}
+
+.minus-plus-button:active::before {
+  opacity: 0.3;
 }
 
 /** Страница каталога */
