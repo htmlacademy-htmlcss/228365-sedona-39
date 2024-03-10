@@ -778,6 +778,7 @@ body {
 }
 
 .minus-plus-button {
+  position: relative;
   grid-column: 2;
   grid-row: 1;
   z-index: 2;
@@ -787,9 +788,25 @@ body {
   background-color: transparent;
 }
 
+.minus-plus-button::after {
+  position: absolute;
+  left: -50%;
+  top: 50%;
+  width: 40px;
+  height: 48px;
+  content: "";
+  z-index: -1;
+  transform: translateY(-50%);
+}
+
 .minus-button {
   justify-self: start;
   margin-left: 10px;
+}
+
+.plus-button {
+  justify-self: end;
+  margin-right: 10px;
 }
 
 .minus-button::before,
@@ -811,19 +828,8 @@ body {
   mask-image: url("../images/minus.svg");
 }
 
-.plus-button {
-  justify-self: end;
-  margin-right: 10px;
-}
-
 .plus-button::before {
   mask-image: url("../images/plus.svg");
-}
-
-.modal-button {
-  grid-column: 1 / -1;
-  padding: 12px 36px;
-  border-radius: 10px;
 }
 
 .minus-button:hover::before,
@@ -842,6 +848,12 @@ body {
 
 .minus-plus-button:active::before {
   opacity: 0.3;
+}
+
+.modal-button {
+  grid-column: 1 / -1;
+  padding: 12px 36px;
+  border-radius: 10px;
 }
 
 /** Страница каталога */
