@@ -654,7 +654,7 @@ body {
 .modal-search-form {
   display: grid;
   grid-template-columns: minmax(247px, auto) minmax(242px, 1fr);
-  gap: 48px 28px;
+  gap: 48px 20px;
 }
 
 .field-group {
@@ -676,6 +676,7 @@ body {
 }
 
 .visitors-children {
+  grid-template-columns: minmax(min-content, auto) 110px;
   justify-self: end;
   min-width: 242px;
 }
@@ -737,7 +738,7 @@ body {
   align-items: center;
 }
 
-.info-button {
+.tooltip-button {
   width: 26px;
   height: 26px;
   border-radius: 50%;
@@ -746,6 +747,47 @@ body {
   background-size: auto;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.tooltip-button:hover {
+  background-color: var(--color-secondary-darker);
+}
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip-text {
+  position: absolute;
+  left: 50%;
+  min-width: 256px;
+  padding: 15px 18px 18px 22px;
+  margin-top: 15px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: none;
+  transform: translate(-50%, -10%) scale(0);
+  border-radius: 10px;
+  color: var(--color-light);
+  background-color: var(--color-dark-secondary);
+  transform-origin: 50% 0%;
+  transition: transform 0.3s;
+}
+
+.tooltip-button:hover + .tooltip-text,
+.tooltip-button:focus + .tooltip-text {
+  transform: translate(-50%, 0%) scale(1);
+}
+
+.tooltip-text::before {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -100%);
+  border: 9px solid transparent;
+  border-bottom-color: var(--color-dark-secondary);
+  content: "";
 }
 
 .message-field {
