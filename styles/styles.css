@@ -654,7 +654,7 @@ body {
 .modal-search-form {
   display: grid;
   grid-template-columns: minmax(247px, auto) minmax(242px, 1fr);
-  gap: 48px 20px;
+  gap: 48px;
 }
 
 .field-group {
@@ -734,7 +734,13 @@ body {
 
 .field-label-info {
   position: relative;
-  display: inline;
+  display: inline-block;
+  padding-right: 38px;
+}
+
+.tooltip {
+  position: absolute;
+  margin-left: 12px;
 }
 
 .tooltip-button {
@@ -750,11 +756,6 @@ body {
 
 .tooltip-button:hover {
   background-color: var(--color-secondary-darker);
-}
-
-.tooltip {
-  position: absolute;
-  margin-left: 12px;
 }
 
 .tooltip-text {
@@ -800,6 +801,13 @@ body {
 
 .message-field--active {
   color: var(--color-error);
+}
+
+.date-field[type="text"] {
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-image: url("../images/icons/calendar-icon.svg");
 }
 
 .date-field[type="number"] {
