@@ -676,8 +676,9 @@ body {
 }
 
 .visitors-children {
-  grid-template-columns: minmax(min-content, auto) 110px;
+  grid-template-columns: min-content 110px;
   justify-self: end;
+  justify-content: space-between;
   min-width: 242px;
 }
 
@@ -724,6 +725,11 @@ body {
   background-color: var(--color-error-light);
 }
 
+.field-label-wrap {
+  position: relative;
+  display: inline;
+}
+
 .field-label {
   font-weight: 700;
   font-size: 20px;
@@ -732,14 +738,14 @@ body {
   text-transform: capitalize;
 }
 
-.field-label-info {
-  display: inline-flex;
-  align-items: center;
+.field-label-text {
+  padding-right: 38px;
 }
 
 .tooltip {
-  position: relative;
+  position: absolute;
   margin-left: 12px;
+  transform: translate(-38px, 1px);
 }
 
 .tooltip-button {
@@ -807,11 +813,16 @@ body {
   position: absolute;
   left: 157px;
   top: 52px;
+  display: none;
   font-size: 16px;
   line-height: 21px;
 }
 
-.message-field--active {
+.message--active {
+  display: block;
+}
+
+.message-field--error {
   color: var(--color-error);
 }
 
