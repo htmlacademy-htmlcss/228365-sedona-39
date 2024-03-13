@@ -18,6 +18,10 @@
   "css.lint.universalSelector": "warning",
   "css.lint.unknownVendorSpecificProperties": "warning",
   "css.lint.zeroUnits": "error",
+  "css.validate": false,
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
   "html.format.endWithNewline": true,
   "html.format.indentInnerHtml": true,
   "cSpell.language": "en,ru",
