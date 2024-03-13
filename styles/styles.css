@@ -17,22 +17,22 @@
 :root {
   --color-primary: #756157;
   --color-primary-darker: #615048;
-  --color-secondary: #82B3D3;
-  --color-secondary-darker: #68A2CA;
-  --color-secondary-middle: #E6F0F6;
-  --color-secondary-light: #F0F6FA;
-  --color-ternary: #3F5E72;
-  --color-accent: #7DB54F;
-  --color-accent-darker: #6C9E42;
+  --color-secondary: #82b3d3;
+  --color-secondary-darker: #68a2ca;
+  --color-secondary-middle: #e6f0f6;
+  --color-secondary-light: #f0f6fa;
+  --color-ternary: #3f5e72;
+  --color-accent: #7db54f;
+  --color-accent-darker: #6c9e42;
   --color-dark-primary: #000000;
   --color-dark-secondary: #333333;
-  --color-light: #FFFFFF;
+  --color-light: #ffffff;
   --color-light-opacity-3: rgba(255, 255, 255, 0.3);
   --color-light-opacity-8: rgba(255, 255, 255, 0.8);
-  --color-gray: #E5E5E5;
+  --color-gray: #e5e5e5;
   --color-gray-middle: #e6e6e6;
-  --color-gray-light: #F2F2F2;
-  --color-error: #FF5757;
+  --color-gray-light: #f2f2f2;
+  --color-error: #ff5757;
   --color-error-light: #ffdddd;
 
   --border-gray: 1px solid var(--color-gray);
