@@ -34,12 +34,10 @@
   --color-gray-light: #f2f2f2;
   --color-error: #ff5757;
   --color-error-light: #ffdddd;
-
   --border-gray: 1px solid var(--color-gray);
   --border-gray-2: 2px solid var(--color-gray);
   --border-dark-primary-2: 2px solid var(--color-dark-primary);
   --border-radius: 4px;
-
   --font-family: "PT Sans", sans-serif;
 }
 
@@ -936,7 +934,7 @@ body {
 /** Catalog page */
 
 .inner-hero {
-  padding: 35px 70px 70px 70px;
+  padding: 35px 70px 70px;
   color: var(--color-light);
   background-color: var(--color-dark-secondary);
   background-image: url("../images/place-filter-bg-image.jpeg");
@@ -1268,9 +1266,9 @@ body {
   cursor: default;
 }
 
+/* Hide the default arrow in IE 10 and 11 */
 .select-control::-ms-expand {
   display: none;
-  /* Hide the default arrow in IE 10 and 11 */
 }
 
 .view-list {
@@ -1280,7 +1278,7 @@ body {
   justify-content: flex-end;
 }
 
-.view-item > .button {
+.view-item > .button--border {
   width: 48px;
   height: 48px;
   background-size: auto;
@@ -1495,13 +1493,13 @@ body {
   background-position: center;
 }
 
+.subscribe-subtitle {
+  margin-bottom: 54px;
+}
+
 .subscribe-bg .subscribe-title,
 .subscribe-bg .subscribe-subtitle {
   color: var(--color-light);
-}
-
-.subscribe-subtitle {
-  margin-bottom: 54px;
 }
 
 .subscribe-form,
