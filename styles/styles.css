@@ -451,9 +451,11 @@ body {
   flex-wrap: wrap;
 }
 
-.about-item {
+.about-item,
+.text-wrapper-about-item {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   padding: 113px 84px;
   flex: 1 1 400px;
@@ -469,22 +471,21 @@ body {
 
 .about-item.about-item-row {
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
   padding: 0;
   color: var(--color-light);
   background-color: var(--color-secondary);
-  flex: 1 1 auto;
+  flex: 1 1 100%;
 }
 
 .text-wrapper-about-item {
-  display: flex;
-  flex-direction: column;
-  padding: 102px 85px;
+  padding: 102px 84px;
 }
 
 .about-item-image {
   display: block;
   width: 800px;
-  height: 100%;
 }
 
 .about-item-title {
