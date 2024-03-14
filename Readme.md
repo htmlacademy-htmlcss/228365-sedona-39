@@ -1,7 +1,8 @@
 # Личный проект «Седона»
 
-* Студент: [Ildar Gnn](https://up.htmlacademy.ru/htmlcss/39/user/228365).
-* Наставник: `Неизвестно`.
+* Студент: [Ildar Gnn](https://htmlacademy.ru/profile/ildar-gn).
+* Наставник: [Keks](https://htmlacademy.ru/upload/images/sources/20240202_c89cf82f.jpg).
+* Сайт: [Седона](https://ildar-gn.github.io/228365-sedona-39).
 
 ---
 
@@ -12,7 +13,7 @@ _`.editorconfig`, `.gitattributes`, `.gitignore`, `Contributing.md`, `Readme.md`
 
 ### Памятка
 
-#### 1. Зарегистрируйтесь на Гитхабе
+#### 1. Зарегистрируйтесь на Github
 
 Если у вас ещё нет аккаунта на [github.com](https://github.com/join), скорее зарегистрируйтесь.
 
