@@ -12,7 +12,7 @@
 
     <div class="page-container">
       <!-- header -->
-      <header class="page-header">
+      <header class="page-header" data-test="header">
         <a class="page-header-logo-wrap" href="index.html">
           <img class="page-header-logo" src="images/logo.svg" width="140" height="70" alt="Перейти на главную страницу сайта города Седона">
         </a>
@@ -47,7 +47,7 @@
         </nav>
       </header>
 
-      <main>
+      <main data-test="main">
         <!-- hero -->
         <div class="inner-hero">
           <header class="inner-header">
@@ -67,7 +67,7 @@
             </nav>
           </header>
           <!-- filters -->
-          <section class="place-filter">
+          <section class="place-filter" data-test="filter">
             <h2 class="visually-hidden">Фильтр выбора жилья</h2>
             <form class="catalog-filter" action="https://echo.htmlacademy.ru/" method="get">
               <fieldset class="catalog-filter-set">
@@ -153,7 +153,7 @@
           </section>
         </div>
         <!-- catalog -->
-        <section class="catalog-products">
+        <section class="catalog-products" data-test="catalog">
           <div class="catalog-products-header">
             <h2 class="catalog-products-title title">Найдено гостиниц: <span>38</span></h2>
             <!-- sort -->
@@ -271,7 +271,7 @@
           </ul>
         </section>
         <!-- subscribe -->
-        <section class="subscribe">
+        <section class="subscribe" data-test="subscribe">
           <h2 class="subscribe-title title">Подпишитесь на рассылку</h2>
           <p class="subscribe-subtitle">Только полезная информация и никакого спама, <br>честное бойскаутское!</p>
           <form class="subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
@@ -284,7 +284,7 @@
         </section>
       </main>
       <!-- footer -->
-      <footer class="page-footer">
+      <footer class="page-footer" data-test="footer">
         <ul class="social-list">
           <li>
             <a class="social-link icon-vk" href="https://vk.com/htmlacademy" target="_blank" rel="noreferrer noopener">
