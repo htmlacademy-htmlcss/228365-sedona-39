@@ -38,7 +38,6 @@
   --border-gray-2: 2px solid var(--color-gray);
   --border-dark-primary-2: 2px solid var(--color-dark-primary);
   --border-radius: 4px;
-  --font-family: "PT Sans", sans-serif;
 }
 
 /* Нормализация блочной модели */
@@ -85,7 +84,7 @@ img {
 
 body {
   margin: 0;
-  font-family: var(--font-family);
+  font-family: "PT Sans", sans-serif;
   font-size: 22px;
   line-height: 1.19;
   font-weight: 400;
