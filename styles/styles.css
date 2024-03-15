@@ -655,6 +655,7 @@ body {
 
 .modal-title {
   margin-bottom: 64px;
+  padding-right: 50px;
 }
 
 .modal-search-form {
@@ -801,7 +802,8 @@ body {
 }
 
 .tooltip-button:hover + .tooltip-text,
-.tooltip-button:focus + .tooltip-text {
+.tooltip-button:focus + .tooltip-text,
+.tooltip--active {
   transform: translate(-50%, 0%) scale(1);
 }
 
@@ -1132,8 +1134,14 @@ body {
 }
 
 .range-field:focus {
-  background-color: var(--color-gray-middle);
   outline: 3px solid var(--color-secondary);
+  background-color: var(--color-gray-middle);
+}
+
+.range-field:user-invalid,
+.range-field:focus:user-invalid {
+  outline: 3px solid var(--color-error);
+  background-color: var(--color-error-light);
 }
 
 .min-price-field {
