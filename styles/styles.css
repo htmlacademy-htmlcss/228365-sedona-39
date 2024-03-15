@@ -132,7 +132,7 @@ body {
 
 .button:disabled:hover {
   outline: none;
-  cursor: default;
+  cursor: not-allowed;
 }
 
 .button:disabled:active {
@@ -214,7 +214,7 @@ body {
 .button--transparent:disabled,
 .button--transparent:disabled:hover {
   opacity: 0.1;
-  cursor: default;
+  cursor: not-allowed;
   background-color: transparent;
 }
 
@@ -458,7 +458,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 113px 84px;
-  flex: 1 1 400px;
+  flex: 0 1 400px;
 }
 
 .about-item:nth-child(+2n+3) {
@@ -724,6 +724,7 @@ body {
 .date-field:disabled,
 .date-field:disabled:hover {
   background-color: var(--color-gray-middle);
+  cursor: not-allowed;
 }
 
 .date-field:user-invalid,
@@ -1274,7 +1275,7 @@ body {
 .select-control:disabled {
   border: var(--border-dark-primary-2);
   opacity: 0.3;
-  cursor: default;
+  cursor: not-allowed;
 }
 
 /* Hide the default arrow in IE 10 and 11 */
@@ -1549,6 +1550,7 @@ body {
 .subscribe-field:disabled,
 .subscribe-field:disabled:hover {
   background-color: var(--color-gray-middle);
+  cursor: not-allowed;
 }
 
 .subscribe-field:user-invalid,
@@ -1645,23 +1647,29 @@ body {
   opacity: 0.3;
 }
 
-.developer-logo {
-  display: block;
-  width: 115px;
-  aspect-ratio: 100 / 30;
-  transition: filter 0.3s, opacity 0.3s;
-}
-
 .developer-link {
   flex-shrink: 0;
 }
 
-.developer-link:hover .developer-logo,
-.developer-link:active .developer-logo,
-.developer-link:focus .developer-logo {
-  filter: invert(39%) sepia(13%) saturate(629%) hue-rotate(335deg) brightness(94%) contrast(87%);
+.developer-link::before {
+  content: "";
+  display: block;
+  min-width: 115px;
+  min-height: 34px;
+  mask-size: auto;
+  mask-position: 50% 50%;
+  mask-repeat: no-repeat;
+  mask-image: url("../images/logo-htmlacademy.svg");
+  background-color: var(--color-dark-primary);
+  transition: background-color 0.3s, opacity 0.3s;
 }
 
-.developer-link:active .developer-logo {
+.developer-link:hover::before,
+.developer-link:active::before,
+.developer-link:focus::before {
+  background-color: var(--color-primary);
+}
+
+.developer-link:active::before {
   opacity: 0.3;
 }
