@@ -277,6 +277,7 @@ body {
 .page-header-logo {
   display: block;
   width: 140px;
+  aspect-ratio: 100 / 50;
 }
 
 /* Навигация */
@@ -1640,6 +1641,7 @@ body {
 .developer-logo {
   display: block;
   width: 115px;
+  aspect-ratio: 100 / 30;
   transition: filter 0.3s, opacity 0.3s;
 }
 
